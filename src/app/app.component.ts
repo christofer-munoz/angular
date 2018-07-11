@@ -8,19 +8,30 @@ import { LlamadoService } from './llamado.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  typeInspect = '';
-  dateInspect = '';
-  valueUf = '';
+  id_select = '';
+  id = '';
+  price = '';
+  description = '';
+  id2 = '';
+  price2 = '';
+  description2 = '';
 
   constructor(private llamadoService: LlamadoService){
     
   }
   
   do() {
-    this.llamadoService.typeInspect = this.typeInspect;
-    this.llamadoService.dateInspect = this.dateInspect;
-    this.valueUf = this.llamadoService.valueUf;
+    this.id = this.llamadoService.id;
+    this.price = this.llamadoService.price;
+    this.description = this.llamadoService.description;
     this.llamadoService.searchIndicator();  
+  }
+  doS() {
+    this.llamadoService.id_select = this.id_select;
+    this.id2 = this.llamadoService.id2;
+    this.price2 = this.llamadoService.price2;
+    this.description2 = this.llamadoService.description2;
+    this.llamadoService.searchIndicatorS();  
   }
   
 }
